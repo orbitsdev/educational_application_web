@@ -147,7 +147,10 @@ class CourseResource extends Resource
                 //     ->size(TextColumnSize::Large)
                 //     ->markdown()
                ImageColumn::make('image.path')
-               ->size(200),
+               ->size(200)
+               ->url(''),
+
+
 
 
                 Tables\Columns\TextColumn::make('title')
