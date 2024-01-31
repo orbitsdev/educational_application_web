@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\CourseResource\Pages;
 
-use App\Filament\Resources\CourseResource;
 use Filament\Actions;
+use Illuminate\Database\Eloquent\Model;
+use App\Filament\Resources\CourseResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateCourse extends CreateRecord
@@ -14,4 +15,17 @@ class CreateCourse extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        // dd($data);
+
+        return $data;
+    }
+protected function handleRecordCreation(array $data): Model
+{
+
+    // dd($data);
+    return static::getModel()::create($data);
+}
 }
